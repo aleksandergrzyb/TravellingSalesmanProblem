@@ -46,12 +46,12 @@ AGCoordinationMatrix::AGCoordinationMatrix(string filepath)
     this->setDestinationMatrix();
 }
 
-string AGCoordinationMatrix::getTitle()
+string AGCoordinationMatrix::getTitle() const
 {
     return this->title;
 }
 
-void AGCoordinationMatrix::tokenize(std::vector<std::string> &tokens, const std::string &text, const std::string &delimiter)
+void AGCoordinationMatrix::tokenize(std::vector<std::string>& tokens, const std::string& text, const std::string& delimiter)
 {
     size_t next_pos = 0;
     size_t init_pos = text.find_first_not_of(delimiter, next_pos);
@@ -78,6 +78,11 @@ void AGCoordinationMatrix::setDestinationMatrix()
             this->destinationMatrix[p] = distance;
         }
     }
+}
+
+int AGCoordinationMatrix::numberOfCities() const
+{
+    return (int)this->coordinations.size();
 }
 
 double AGCoordinationMatrix::getDistance(int city1, int city2)

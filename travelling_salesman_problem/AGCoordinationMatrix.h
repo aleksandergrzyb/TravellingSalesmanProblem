@@ -21,9 +21,10 @@ public:
     AGCoordinationMatrix(std::string filepath);
     ~AGCoordinationMatrix(void);
     double getDistance(int city1, int city2);
-    std::string getTitle();
+    std::string getTitle() const;
+    int numberOfCities() const;
 private:
-    void tokenize(std::vector<std::string> &tokens, const std::string &text, const std::string &delimiter);
+    void tokenize(std::vector<std::string>& tokens, const std::string& text, const std::string& delimiter);
     void setDestinationMatrix(void);
     std::string title;
     std::vector<std::pair<int, int>> coordinations;

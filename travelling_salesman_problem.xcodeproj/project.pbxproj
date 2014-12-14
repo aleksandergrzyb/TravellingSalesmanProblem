@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		59CCD7291A3E12CB00B305B4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59CCD7281A3E12CB00B305B4 /* main.cpp */; };
 		59CCD7371A3E16C200B305B4 /* AGCoordinationMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59CCD7351A3E16C200B305B4 /* AGCoordinationMatrix.cpp */; };
+		59CCD7491A3E39B400B305B4 /* AGTSAlgorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59CCD7471A3E39B400B305B4 /* AGTSAlgorithm.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +37,8 @@
 		59CCD73D1A3E1F4F00B305B4 /* pr226.tsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pr226.tsp; sourceTree = "<group>"; };
 		59CCD73E1A3E1F4F00B305B4 /* pr264.tsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pr264.tsp; sourceTree = "<group>"; };
 		59CCD73F1A3E1F4F00B305B4 /* pr299.tsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pr299.tsp; sourceTree = "<group>"; };
+		59CCD7471A3E39B400B305B4 /* AGTSAlgorithm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AGTSAlgorithm.cpp; sourceTree = "<group>"; };
+		59CCD7481A3E39B400B305B4 /* AGTSAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTSAlgorithm.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				59CCD7281A3E12CB00B305B4 /* main.cpp */,
 				59CCD7351A3E16C200B305B4 /* AGCoordinationMatrix.cpp */,
 				59CCD7361A3E16C200B305B4 /* AGCoordinationMatrix.h */,
+				59CCD7471A3E39B400B305B4 /* AGTSAlgorithm.cpp */,
+				59CCD7481A3E39B400B305B4 /* AGTSAlgorithm.h */,
 			);
 			path = travelling_salesman_problem;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 			files = (
 				59CCD7371A3E16C200B305B4 /* AGCoordinationMatrix.cpp in Sources */,
 				59CCD7291A3E12CB00B305B4 /* main.cpp in Sources */,
+				59CCD7491A3E39B400B305B4 /* AGTSAlgorithm.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

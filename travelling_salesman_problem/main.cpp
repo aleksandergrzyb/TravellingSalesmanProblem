@@ -8,11 +8,16 @@
 
 #include <iostream>
 #include "AGCoordinationMatrix.h"
+#include "AGTSAlgorithm.h"
 
 using namespace std;
 
 int main(int argc, const char * argv[]) {
     AGCoordinationMatrix *coordinationMatrix = new AGCoordinationMatrix("/Users/aleksandergrzyb/Dropbox/studies/studia_magisterskie/semestr_9/metaheurystyki_i_obliczenia_inspirowanie_biologicznie/sprawozdanie_1/travelling_salesman_problem/travelling_salesman_problem/pr107.tsp");
-    cout << coordinationMatrix->getTitle() << endl;
+    AGTSAlgorithm *tsAlgorithm = new AGTSAlgorithm(coordinationMatrix);
+    tsAlgorithm->createNearestNeighbourTour();
+    cout << "Distance: " << tsAlgorithm->routeDistance() << endl;
+    tsAlgorithm->createRandomRoute();
+    cout << "Distance: " << tsAlgorithm->routeDistance() << endl;
     return 0;
 }
