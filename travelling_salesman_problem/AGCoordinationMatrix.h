@@ -21,6 +21,7 @@ public:
     AGCoordinationMatrix(std::string filepath);
     ~AGCoordinationMatrix(void);
     double getDistance(int city1, int city2);
+    void setDestinationMatrix(std::map<std::pair<int, int>, double>& newDestinationMatrix);
     std::string getTitle() const;
     int numberOfCities() const;
 private:

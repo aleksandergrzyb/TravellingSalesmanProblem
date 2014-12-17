@@ -15,17 +15,25 @@
 
 class AGTSAlgorithm {
 public:
-    AGTSAlgorithm(AGCoordinationMatrix *coordinationMatrix) : coordinationMatrix(coordinationMatrix) {}
+    AGTSAlgorithm(AGCoordinationMatrix *coordinationMatrix) : coordinationMatrix(coordinationMatrix), numberOfSteps(0) {}
+    ~AGTSAlgorithm();
     double routeDistance() const;
+    double begginerRouteDistance() const;
     int routeSize() const;
     void createRandomRoute();
-    void createNearestNeighbourTour();
-    void performTwoOpt();
-    void getTour(std::vector<int>& tour);
+    void createNearestNeighbourRoute();
+    void createGreedyRoute();
+    void createSteepestRoute();
+    void performTwoOpt(int cityOne, int cityTwo);
+    void getRoute(std::vector<int>& route);
+    int numberOfSteps;
+    int numberOfEvaluations;
 private:
     void reset();
+    void preform2Opt(int& cityOne, int& cityTwo);
     int getNearestNeighbour(const int& city, std::set<int>& cities);
     std::vector<int> route;
+    std::vector<int> begginerRoute;
     AGCoordinationMatrix *coordinationMatrix;
 };
 

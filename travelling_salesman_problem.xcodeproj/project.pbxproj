@@ -25,18 +25,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		59B5B3001A40B22500A5331E /* berlin52.tsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = berlin52.tsp; sourceTree = "<group>"; };
+		59B5B3031A40B22500A5331E /* eil76.tsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eil76.tsp; sourceTree = "<group>"; };
+		59B5B3081A40B36400A5331E /* st70.tsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = st70.tsp; sourceTree = "<group>"; };
+		59B5B3091A40B39400A5331E /* rat99.tsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rat99.tsp; sourceTree = "<group>"; };
+		59B5B30A1A40B3E600A5331E /* kroA100.tsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kroA100.tsp; sourceTree = "<group>"; };
+		59B5B3101A40B75900A5331E /* ulysses16G.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ulysses16G.txt; path = results/ulysses16G.txt; sourceTree = "<group>"; };
+		59B5B3111A40B75900A5331E /* ulysses16NN.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ulysses16NN.txt; path = results/ulysses16NN.txt; sourceTree = "<group>"; };
+		59B5B3121A40B75900A5331E /* ulysses16R.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ulysses16R.txt; path = results/ulysses16R.txt; sourceTree = "<group>"; };
+		59B5B3131A40B75900A5331E /* ulysses16S.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ulysses16S.txt; path = results/ulysses16S.txt; sourceTree = "<group>"; };
+		59B5B3151A40CBEC00A5331E /* pr76.tsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pr76.tsp; sourceTree = "<group>"; };
+		59B5B3161A40CC3100A5331E /* eil51.tsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eil51.tsp; sourceTree = "<group>"; };
+		59B5B3171A40CC8E00A5331E /* kroC100.tsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kroC100.tsp; sourceTree = "<group>"; };
 		59CCD7251A3E12CB00B305B4 /* travelling_salesman_problem */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = travelling_salesman_problem; sourceTree = BUILT_PRODUCTS_DIR; };
 		59CCD7281A3E12CB00B305B4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		59CCD7351A3E16C200B305B4 /* AGCoordinationMatrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AGCoordinationMatrix.cpp; sourceTree = "<group>"; };
 		59CCD7361A3E16C200B305B4 /* AGCoordinationMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGCoordinationMatrix.h; sourceTree = "<group>"; };
-		59CCD7381A3E1F4F00B305B4 /* pr107.tsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pr107.tsp; sourceTree = "<group>"; };
-		59CCD7391A3E1F4F00B305B4 /* pr124.tsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pr124.tsp; sourceTree = "<group>"; };
-		59CCD73A1A3E1F4F00B305B4 /* pr136.tsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pr136.tsp; sourceTree = "<group>"; };
-		59CCD73B1A3E1F4F00B305B4 /* pr144.tsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pr144.tsp; sourceTree = "<group>"; };
-		59CCD73C1A3E1F4F00B305B4 /* pr152.tsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pr152.tsp; sourceTree = "<group>"; };
-		59CCD73D1A3E1F4F00B305B4 /* pr226.tsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pr226.tsp; sourceTree = "<group>"; };
-		59CCD73E1A3E1F4F00B305B4 /* pr264.tsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pr264.tsp; sourceTree = "<group>"; };
-		59CCD73F1A3E1F4F00B305B4 /* pr299.tsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pr299.tsp; sourceTree = "<group>"; };
 		59CCD7471A3E39B400B305B4 /* AGTSAlgorithm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AGTSAlgorithm.cpp; sourceTree = "<group>"; };
 		59CCD7481A3E39B400B305B4 /* AGTSAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTSAlgorithm.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,6 +56,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59B5B30F1A40B74E00A5331E /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				59B5B3101A40B75900A5331E /* ulysses16G.txt */,
+				59B5B3111A40B75900A5331E /* ulysses16NN.txt */,
+				59B5B3121A40B75900A5331E /* ulysses16R.txt */,
+				59B5B3131A40B75900A5331E /* ulysses16S.txt */,
+			);
+			name = Results;
+			sourceTree = "<group>";
+		};
 		59CCD71C1A3E12CB00B305B4 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +86,7 @@
 		59CCD7271A3E12CB00B305B4 /* travelling_salesman_problem */ = {
 			isa = PBXGroup;
 			children = (
+				59B5B30F1A40B74E00A5331E /* Results */,
 				59CCD7401A3E1F5400B305B4 /* Data */,
 				59CCD7281A3E12CB00B305B4 /* main.cpp */,
 				59CCD7351A3E16C200B305B4 /* AGCoordinationMatrix.cpp */,
@@ -84,14 +100,14 @@
 		59CCD7401A3E1F5400B305B4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				59CCD7381A3E1F4F00B305B4 /* pr107.tsp */,
-				59CCD7391A3E1F4F00B305B4 /* pr124.tsp */,
-				59CCD73A1A3E1F4F00B305B4 /* pr136.tsp */,
-				59CCD73B1A3E1F4F00B305B4 /* pr144.tsp */,
-				59CCD73C1A3E1F4F00B305B4 /* pr152.tsp */,
-				59CCD73D1A3E1F4F00B305B4 /* pr226.tsp */,
-				59CCD73E1A3E1F4F00B305B4 /* pr264.tsp */,
-				59CCD73F1A3E1F4F00B305B4 /* pr299.tsp */,
+				59B5B3171A40CC8E00A5331E /* kroC100.tsp */,
+				59B5B3161A40CC3100A5331E /* eil51.tsp */,
+				59B5B3151A40CBEC00A5331E /* pr76.tsp */,
+				59B5B30A1A40B3E600A5331E /* kroA100.tsp */,
+				59B5B3091A40B39400A5331E /* rat99.tsp */,
+				59B5B3081A40B36400A5331E /* st70.tsp */,
+				59B5B3001A40B22500A5331E /* berlin52.tsp */,
+				59B5B3031A40B22500A5331E /* eil76.tsp */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -268,6 +284,7 @@
 				59CCD72E1A3E12CB00B305B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

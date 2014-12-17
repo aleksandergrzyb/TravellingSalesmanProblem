@@ -13,6 +13,12 @@
 
 using namespace std;
 
+AGCoordinationMatrix::~AGCoordinationMatrix()
+{
+    coordinations.clear();
+    destinationMatrix.clear();
+}
+
 AGCoordinationMatrix::AGCoordinationMatrix(string filepath)
 {
     ifstream file;

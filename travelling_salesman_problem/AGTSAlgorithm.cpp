@@ -9,14 +9,22 @@
 #include "AGTSAlgorithm.h"
 #include <algorithm>
 #include <stdlib.h>
+#include <cmath>
 
 using namespace std;
+
+AGTSAlgorithm::~AGTSAlgorithm()
+{
+    this->route.clear();
+}
 
 void AGTSAlgorithm::createRandomRoute()
 {
     this->reset();
+    this->numberOfSteps = 0;
     for (int i = 0; i < this->coordinationMatrix->numberOfCities(); i++) {
         this->route.push_back(i);
+        this->numberOfSteps++;
     }
     random_shuffle(this->route.begin() + 1, this->route.end());
 }
@@ -38,6 +46,23 @@ double AGTSAlgorithm::routeDistance() const
     return distance;
 }
 
+double AGTSAlgorithm::begginerRouteDistance() const
+{
+    double distance = 0.0;
+    int routeSize = (int)this->begginerRoute.size();
+    int city1, city2;
+    for (int i = 0; i < routeSize - 1; i++) {
+        city1 = this->begginerRoute[i];
+        city2 = this->begginerRoute[i + 1];
+        distance += this->coordinationMatrix->getDistance(city1, city2);
+    }
+    // Add distance to the beginning city
+    city1 = this->begginerRoute[routeSize - 1];
+    city2 = this->begginerRoute[0];
+    distance += this->coordinationMatrix->getDistance(city1, city2);
+    return distance;
+}
+
 int AGTSAlgorithm::routeSize() const
 {
     return (int)this->route.size();
@@ -46,15 +71,18 @@ int AGTSAlgorithm::routeSize() const
 void AGTSAlgorithm::reset()
 {
     this->route.clear();
+    this->begginerRoute.clear();
 }
 
-void AGTSAlgorithm::createNearestNeighbourTour()
+void AGTSAlgorithm::createNearestNeighbourRoute()
 {
     this->reset();
+    this->numberOfSteps = 0;
     set<int> citiesSet;
     set<int>::iterator it;
     for (int i = 0; i < this->coordinationMatrix->numberOfCities(); i++) {
         citiesSet.insert(i);
+        this->numberOfSteps++;
     }
     int city = rand() % this->coordinationMatrix->numberOfCities();
     for (int i = 0; i < this->coordinationMatrix->numberOfCities(); i++) {
@@ -75,6 +103,7 @@ int AGTSAlgorithm::getNearestNeighbour(const int& city, std::set<int>& cities)
         if (newCity == city) {
             continue;
         }
+        this->numberOfSteps++;
         double distance = this->coordinationMatrix->getDistance(city, newCity);
         if (distance < minimumDistance) {
             nearestCity = newCity;
@@ -84,9 +113,95 @@ int AGTSAlgorithm::getNearestNeighbour(const int& city, std::set<int>& cities)
     return nearestCity;
 }
 
+void AGTSAlgorithm::createGreedyRoute()
+{
+    this->numberOfSteps = 0;
+    this->numberOfEvaluations = 0;
+    this->reset();
+    this->createRandomRoute();
+    this->begginerRoute = this->route;
+    this->numberOfSteps = this->routeSize();
+    int iterationsWithoutImprovement = 0;
+    while (iterationsWithoutImprovement < 10) {
+        for (int i = 0; i < this->routeSize() - 1; i++) {
+            for (int j = 1; j < this->routeSize(); j++) {
+                vector<int> tempRoute = this->route;
+                this->numberOfSteps++;
+                double currentDistance = this->routeDistance();
+                this->numberOfEvaluations++;
+                this->performTwoOpt(i, j);
+                double newDistance = this->routeDistance();
+                this->numberOfEvaluations++;
+                if (newDistance < currentDistance) {
+                    iterationsWithoutImprovement = 0;
+                }
+                else {
+                    this->route = tempRoute;
+                }
+            }
+        }
+        iterationsWithoutImprovement++;
+    }
+}
 
+void AGTSAlgorithm::createSteepestRoute()
+{
+    this->numberOfSteps = 0;
+    this->numberOfEvaluations = 0;
+    this->reset();
+    this->createRandomRoute();
+    this->begginerRoute = this->route;
+    this->numberOfSteps = this->routeSize();
+    int iterationsWithoutImprovement = 0;
+    while (iterationsWithoutImprovement < 3) {
+        double bestDistance = 0;
+        int cityOneWithBestDistance = 0, cityTwoWithBestDistance = 0;
+        for (int i = 0; i < this->routeSize() - 1; i++) {
+            for (int j = 1; j < this->routeSize(); j++) {
+                vector<int> tempRoute = this->route;
+                double currentDistance = this->routeDistance();
+                this->numberOfSteps++;
+                this->numberOfEvaluations++;
+                this->performTwoOpt(i, j);
+                double newDistance = this->routeDistance();
+                this->numberOfEvaluations++;
+                if (newDistance < currentDistance) {
+                    iterationsWithoutImprovement = 0;
+                    bestDistance = newDistance;
+                    cityOneWithBestDistance = i;
+                    cityTwoWithBestDistance = j;
+                }
+                this->route = tempRoute;
+            }
+        }
+        this->performTwoOpt(cityOneWithBestDistance, cityTwoWithBestDistance);
+        iterationsWithoutImprovement++;
+    }
+}
 
+void AGTSAlgorithm::performTwoOpt(int cityOne, int cityTwo)
+{
+    if (cityTwo < cityOne) {
+        int temp = cityTwo;
+        cityTwo = cityOne;
+        cityOne = temp;
+    }
+    int loopIterations = (cityTwo + cityOne) * 0.5;
+    if ((cityTwo - cityOne) % 2 == 0) {
+        loopIterations = (cityTwo - cityOne) * 0.5;
+    }
+    else {
+        loopIterations = floor((cityTwo - cityOne) * 0.5) + 1;
+    }
+    for (int i = 0; i <= loopIterations; i++) {
+        swap(this->route[cityOne + i], this->route[cityTwo - i]);
+    }
+}
 
+void AGTSAlgorithm::getRoute(std::vector<int> &route)
+{
+    route = this->route;
+}
 
 
 
